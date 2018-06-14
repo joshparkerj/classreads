@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 4001;
-const headerscript = '<!DOCTYPE html><html><head><title>Class Reads</title><link rel="stylesheet" type="text/css" href="/style.css"></head><body><div class="gridcontainer">';
+const headerscript = '<!DOCTYPE html><html><head><title>Class Reads</title><link rel="stylesheet" type="text/css" href="/style.css"><link rel="icon" type="image/svg+xml" href="favicon.ico"></head><body><div class="gridcontainer">';
 const pageheading = '<div class="mainpageright"><h1 class="pageheading">Class Reads</h1>';
 const pageending = '</div><div class="lowerleftcorner"></div><div class="footerright"><p><a href="/">return to home</a></p></div></div></body></html>';
 const registrationform = '<div><form action="/registration">User Name:<br><input type="text" name="user"><br><input type="password" name="password"><input type="submit" value="Register"></form></div>';
@@ -56,6 +56,11 @@ app.get('/style.css', (req, res) => {
 	res.send('html {background-color: #E8E8B0; font-family: sans-serif; font-size: 11px; text-align: left;} h1 {font-family: Georgia, serif;} ol {list-style-position: inside;} .pageheading {color: #8F3000; font-size: 200%;} .gridcontainer {display: grid; grid-template-columns: 1fr 4fr; grid-template-rows: 4fr 1fr; height: 90vh;} .sidebarleft {grid-row: 1; grid-column: 1;} .mainpageright {grid-row: 1; grid-column: 2;} .lowerleftcorner {grid-row: 2; grid-column: 1;} .footerright {grid-row: 2; grid-column: 2;}');
 });
 
+
+app.get('/favicon.ico', (req, res) => {
+	res.type('image/svg+xml');
+	res.send('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><style> .bigger {font: bold 350px serif;} </style><title>Class Reads Favicon</title><polygon points="250,0 250,250 500,250 500,0" fill="#5068B3"/><text x="0" y="359" fill="black" class="bigger">CR</text></svg>');
+});
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
