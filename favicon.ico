@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+ <style> 
+  .bigger {
+   font: bold 350px serif;
+  } 
+ </style>
+ <title>Class Reads Favicon</title>
+ <polygon points="250,0 250,250 500,250 500,0" fill="#5068B3"/>
+ <text x="0" y="359" fill="black" class="bigger">CR</text>
+</svg>
